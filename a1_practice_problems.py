@@ -16,7 +16,8 @@ Make sure to complete the a1.py problems which should be AI generated.
 
 from typing import List, TypeVar
 
-
+git config --global user.email "nzhang@cps.edu"
+git config --global user.name "Nickscon"
 def absolute(n: int) -> int:
     """Gives the absolute value of the passed in number. Cannot use the built in
     function `abs`.
@@ -27,7 +28,11 @@ def absolute(n: int) -> int:
     Returns:
         the absolute value of the passed in number
     """
-    raise NotImplementedError("absolute")
+    if n < 0:
+        return n* -1
+    return n
+
+    # raise NotImplementedError("absolute")
 
 
 def factorial(n: int) -> int:
@@ -40,8 +45,15 @@ def factorial(n: int) -> int:
     Returns:
         factorial of the passed in number
     """
-    raise NotImplementedError("factorial")
+    if n == 0:
+        return 1
+    else:
+        result = 1
+        for i in range(1, n+1):
+            result *=i
+        return result 
 
+    
 
 T = TypeVar("T")
 
@@ -57,7 +69,7 @@ def every_other(lst: List[T]) -> List[T]:
     Returns:
         a list of every of other item in the original list starting with the first
     """
-    raise NotImplementedError("every_other")
+    
 
 
 def sum_list(lst: List[int]) -> int:
