@@ -16,8 +16,6 @@ Make sure to complete the a1.py problems which should be AI generated.
 
 from typing import List, TypeVar
 
-git config --global user.email "nzhang@cps.edu"
-git config --global user.name "Nickscon"
 def absolute(n: int) -> int:
     """Gives the absolute value of the passed in number. Cannot use the built in
     function `abs`.
@@ -69,7 +67,10 @@ def every_other(lst: List[T]) -> List[T]:
     Returns:
         a list of every of other item in the original list starting with the first
     """
-    
+    result = []
+    for i in range(0, len(lst),2):
+        result.append(lst[i])
+    return result
 
 
 def sum_list(lst: List[int]) -> int:
@@ -82,7 +83,10 @@ def sum_list(lst: List[int]) -> int:
     Returns:
         the sum of the passed in list
     """
-    raise NotImplementedError("sum_list")
+    total = 0
+    for i in range(0, len(lst)):
+        total += lst[i]
+    return total
 
 
 def mean(lst: List[int]) -> float:
@@ -94,7 +98,16 @@ def mean(lst: List[int]) -> float:
     Returns:
         the mean of the passed in list
     """
-    raise NotImplementedError("mean")
+    div = 0
+    result = []
+    if len(lst) == 0:
+        mean = 0
+        return mean
+    if len(lst) > 0:
+        for i in range(0, len(lst)):
+            div += i
+            mean = div/len(lst)
+    return mean
 
 
 def median(lst: List[int]) -> float:
@@ -109,7 +122,17 @@ def median(lst: List[int]) -> float:
     Returns:
         the median of the passed in list
     """
-    raise NotImplementedError("median")
+    n = 0
+    result = []
+    if len(lst) == 0:
+        return n
+    if len(lst) > 0:
+        n = len(lst)
+        middle = n/2 
+        if (middle%2) > 0:
+            return lst[middle]
+        else:
+            return (lst[middle-1] + lst[middle])/2
 
 
 def duck_duck_goose(lst: List[str]) -> List[str]:
